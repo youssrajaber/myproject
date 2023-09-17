@@ -17,13 +17,15 @@
             <div class="row w-75 mx-auto">
                 <h1 class="fw-bold my-5 text-center gold-color">All Category's </h1>
                 @foreach ($showAll as $show)
-                    <div class="fs-3 fw-blod text-uppercase">{{ $show->nom }}</div>
-                    <div class="d-flex justify-content-between  my-2">
-                        <div style="width: 5rem ; height: 5rem;">
-                            <img class="card-img-top " style="width: 5rem" src="{{ asset('images/' . $show->image) }}"
-                                alt="photo" />
+                    <div class="d-flex justify-content-between align-items-center  my-2">
+                        <div class="d-flex align-items-center">
+                            <div style="width: 5rem ; height: 5rem;">
+                                <img class="card-img-top " style="width: 5rem"
+                                    src="{{ asset('images/' . $show->image) }}" alt="photo" />
+                            </div>
+                            <div class="fs-3 ms-2 fw-blod text-uppercase">{{ $show->nom }}</div>
                         </div>
-                        <div>
+                        <div class="">
                             <form action="{{ route('destroyCat', $show->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')

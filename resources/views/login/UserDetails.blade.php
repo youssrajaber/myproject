@@ -55,7 +55,7 @@
         <div class="d-flex justify-content-between align-items-center">
             <h1 class="text-center my-5"> Old Orders : {{ $totalhst }}</h1>
             <div class="text-center my-5">
-                <strong class="fs-2 fw-bold">Totale {{ $totalSum }} DH</strong>
+                {{-- <strong class="fs-2 fw-bold">Totale {{ $totalSum }} DH</strong> --}}
             </div>
         </div>
         @if (!empty($historiques) && count($historiques) > 0)

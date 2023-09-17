@@ -102,10 +102,13 @@ class loginController extends Controller
         $totalSum = DB::table('historiques')
             ->join('users', 'historiques.idUser', '=', 'users.id')
             ->where('historiques.idUser', auth()->user()->id)
-            ->sum('historiques.totale');
+            ->select('historiques.totale')
+            ->sum("historiques.totale");
+
 
         $messages = $this->messages();
         $totalcontact = contact::all()->count();
+
         $totalhst = DB::table('historiques')
             ->join('users', 'historiques.idUser', '=', 'users.id')
             ->where('users.id',  auth()->user()->id)
